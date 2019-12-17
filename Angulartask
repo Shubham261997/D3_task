@@ -1,0 +1,64 @@
+import { Component,OnInit } from '@angular/core';
+import {Chart} from 'chart.js';
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
+})
+export class AppComponent implements OnInit {
+  title = 'Ng7ChartJs By DotNet Techy';
+  LineChart=[];
+  BarChart=[];
+ 
+  ngOnInit()
+  {
+
+
+
+// Bar chart:
+this.BarChart = new Chart('barChart', {
+  type: 'bar',
+data: {
+ labels: ["2006", "2008", "2010", "2012", "2014", "2016","2017"],
+ datasets: [{
+     label: 'Population',
+     data: [40, 45, 48, 60, 53, 57, 62],
+     backgroundColor: [
+         'rgba(255, 99, 132, 0.2)',
+         'rgba(54, 162, 235, 0.2)',
+         'rgba(255, 206, 86, 0.2)',
+         'rgba(75, 192, 192, 0.2)',
+         'rgba(153, 102, 255, 0.2)',
+         'rgba(255, 159, 64, 0.2)',
+         'rgba(200, 200, 52, 0.6)'
+     ],
+     borderColor: [
+         'rgba(255,99,132,1)',
+         'rgba(54, 162, 235, 1)',
+         'rgba(255, 206, 86, 1)',
+         'rgba(75, 192, 192, 1)',
+         'rgba(153, 102, 255, 1)',
+         'rgba(255, 159, 64, 1)',
+         'rgba(200, 200, 54, 2)'
+     ],
+     borderWidth: 2
+ }]
+}, 
+options: {
+ title:{
+     text:"Bar Chart",
+     display:true
+ },
+ scales: {
+     yAxes: [{
+         ticks: {
+             beginAtZero:true
+         }
+     }]
+ }
+}
+});
+
+  }//ngoninit()
+}
+
